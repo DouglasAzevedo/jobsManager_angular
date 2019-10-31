@@ -10,6 +10,12 @@
     </thead>
 
     <tbody>
-        
+        <tr *ngFor="let j of jobs">
+            <td>{{j.title}}</td>
+            <td>{{j.salary | currency: "R$ "}}</td>
+            <td>{{j.vacancies}}</td>
+            <td>{{j.availableUntil | date:"dd/MM/yyyy"}}</td>
+            <td>{{j.company}}</td>
+        </tr>
     </tbody>
 </table>
