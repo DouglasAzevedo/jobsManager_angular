@@ -1,1 +1,17 @@
-<p>list-company works!</p>
+<table width="90%" border="1">
+    <thead>
+        <tr>
+            <th style="width: 50%">Company</th>
+            <th style="width: 50%">Industry</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let c of companies">
+            <td>{{c.name}}</td>
+            <td>{{c.industry}}</td>
+        </tr>
+    </tbody>
+</table>
+
+<input type="button" value="New Company" (click)="openNewCompany()"/>

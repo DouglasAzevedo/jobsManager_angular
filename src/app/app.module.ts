@@ -8,7 +8,9 @@ import { ListJobsComponent } from './jobs/list-jobs/list-jobs.component';
 import { NewJobComponent } from './jobs/new-job/new-job.component';
 import { ListCompanyComponent } from './company/list-company/list-company.component';
 import { NewCompanyComponent } from './company/new-company/new-company.component';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSliderModule } from '@angular/material/slider';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,10 @@ import { NewCompanyComponent } from './company/new-company/new-company.component
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatSliderModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

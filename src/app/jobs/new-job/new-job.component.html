@@ -1,1 +1,42 @@
-<p>new-job works!</p>
+<form>
+    Title : <br />
+    <input type="text" name="TitleName" [(ngModel)]="job.title" />
+
+    <br />
+
+    Description : <br />
+    <input type="text" name="desc" [(ngModel)]="job.description">
+
+    <br />
+
+    Salary : <br />
+    <input type="text" name="salary" [(ngModel)]="job.salary" />
+
+    <br />
+
+    Vacancies : <br />
+    <input type="text" name="vacancies" [(ngModel)]="job.vacancies" />
+
+    <br />
+    Availablie Until : <br />
+    <input type="date" name="until" [(ngModel)]="job.availableUntil" />
+
+    <br />
+
+    Available From : <br />
+    <input type="date" name="from" [(ngModel)]="job.availableFrom" />
+
+    <br />
+
+    Company : <br />
+    <select name="company" [(ngModel)]="job.companyId">
+        <option *ngFor="let c of companies" [value]="c.id">{{c.name}}</option>
+    </select>
+
+    <br />
+
+    <input type="button" value="Save" (click)="save()" />
+    &nbsp;
+    <input type="button" value="Cancel" (click)="cancel()" />
+
+</form>

@@ -1,6 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { JobService } from 'src/app/service/job.service';
+import { JobDto } from 'src/app/model/models';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-list-jobs',
@@ -9,9 +10,10 @@ import { JobService } from 'src/app/service/job.service';
 })
 export class ListJobsComponent implements OnInit {
 
-  jobs = [];
+  jobs: JobDto[] = [];
 
-  constructor(private jobService: JobService) { }
+  constructor(private jobService: JobService,
+    private router: Router) { }
 
   ngOnInit() {
     this.listJobs()
@@ -19,10 +21,14 @@ export class ListJobsComponent implements OnInit {
 
   listJobs() {
     this.jobService.listAll().subscribe(
-        (result) => {
-          this.jobs = result as []
-        }
+      (result) => {
+        this.jobs = result
+      }
     )
+  }
+
+  openNewJob() {
+    this.router.navigateByUrl('/new-job');
   }
 
 }
